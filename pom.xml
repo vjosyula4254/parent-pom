@@ -358,8 +358,10 @@
                         </executions>
                     </plugin>
                 </plugins>
+                </built>
+            </profile>
         <!-- proxy-unit-init -->
-                </plugin>
+                
         <profile>
             <id>proxy-unit-test</id>
             <build>
