@@ -317,16 +317,17 @@
             </build>
         </profile>
         
+       <!--proxy-linting -->
         <profile>
             <id>proxy-linting</id>
             <build>
                 <plugins>
-                    <!--functional init -->
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>exec-maven-plugin</artifactId>
                         <version>1.3.2</version>
                         <executions>
+
                             <!-- npm install -->
                             <execution>
                                 <id>npm-install</id>
@@ -341,30 +342,26 @@
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
-                            <!-- run integration tests -->
+
+                            <!-- run linting -->
                             <execution>
-                                <id>linting</id>
-                                <phase>install</phase>
+                                <id>proxy-linting</id>
+                                <phase>test</phase>
                                 <goals>
                                     <goal>exec</goal>
                                 </goals>
                                 <configuration>
                                     <executable>node</executable>
                                     <commandlineArgs>
-                                        ./node_modules/apigeelint/main.js -s apiproxy/ -f html.js target/test/linting/features
-                                        json:target/reports.json
+                                        node_modules/apigeelint/cli.js -s apiproxy -f html.js
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
                 </plugins>
-
             </build>
         </profile>
-        
-        
-        
         
         
         
