@@ -359,6 +359,7 @@
                     </plugin>
                 </plugins>
         <!-- proxy-unit-init -->
+                </plugin>
         <profile>
             <id>proxy-unit-test</id>
             <build>
