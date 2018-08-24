@@ -316,7 +316,48 @@
 
             </build>
         </profile>
-
+        
+        <profile>
+            <id>proxy-linting</id>
+            <build>
+                <plugins>
+                    <!--functional init -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.3.2</version>
+                        <executions>
+                            <!-- npm install -->
+                            <execution>
+                                <id>npm-install</id>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>npm</executable>
+                                    <commandlineArgs>
+                                        install
+                                    </commandlineArgs>
+                                </configuration>
+                            </execution>
+                            <!-- run integration tests -->
+                            <execution>
+                                <id>linting</id>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <commandlineArgs>
+                                    npm install ./node_modules/apigeelint/main.js -s apiproxy/ -f table.js    
+                                    </commandlineArgs>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
         <!-- proxy-unit-init -->
         <profile>
             <id>proxy-unit-test</id>
