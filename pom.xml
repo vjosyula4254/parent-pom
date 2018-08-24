@@ -353,8 +353,9 @@
                                 <configuration>
                                     <executable>node</executable>
                                     <commandlineArgs>
-                               node_modules/apigeelint/cli.js -s apiproxy -f html.js > linting.html
-                                        json:target/reports.html
+                               <!--node_modules/apigeelint/cli.js -s apiproxy -f html.js > linting.html-->
+                                        node_modules/apigeelint -s apiproxy/ -f html.js > linting.html
+                                        
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
