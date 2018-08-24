@@ -33,9 +33,9 @@
         <target.root.dir>${basedir}/target</target.root.dir>
         <deployment.suffix>${user.name}</deployment.suffix>
         <deployment.env>-${env}</deployment.env>
-
-        <org>sidgs</org>
-        <env>dev</env>
+<!--
+        <org></org>
+        <env></env> -->
 
         <apigee.api.protocol>https</apigee.api.protocol>
         <apigee.api.host>api.enterprise.apigee.com</apigee.api.host>
@@ -353,7 +353,7 @@
                                 <configuration>
                                     <executable>node</executable>
                                     <commandlineArgs>
-                               node_modules/apigeelint/cli.js -s apiproxy -f html.js 
+                               node_modules/apigeelint/cli.js -s apiproxy -f jslint-xml.js 
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
