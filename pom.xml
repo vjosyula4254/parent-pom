@@ -351,7 +351,7 @@
                                 <configuration>
                                     <executable>node</executable>
                                     <commandlineArgs>
-                                        ./node_modules/apigeelint/main.js -s apiproxy/ -f table.js
+                                        ./node_modules/apigeelint/main.js -s apiproxy/ -f table.js target/test/linting/features
                                         json:target/linting.json
                                     </commandlineArgs>
                                 </configuration>
