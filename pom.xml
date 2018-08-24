@@ -343,7 +343,7 @@
                             </execution>
                             <!-- run integration tests -->
                             <execution>
-                                <id>integration</id>
+                                <id>linting</id>
                                 <phase>install</phase>
                                 <goals>
                                     <goal>exec</goal>
@@ -352,6 +352,7 @@
                                     <executable>node</executable>
                                     <commandlineArgs>
                                         ./node_modules/apigeelint/main.js -s apiproxy/ -f table.js
+                                        json:target/linting.json
                                     </commandlineArgs>
                                 </configuration>
                             </execution>
